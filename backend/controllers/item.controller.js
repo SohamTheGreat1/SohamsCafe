@@ -57,6 +57,6 @@ export const deleteItem = async (req, res) => {
     }
     catch (error) {
         console.log("error in deleting item:", error.message)
-        res.status(404).json({success: false, message: "Item not found"})
+        res.status(500).json({success: false, message: "Server error"})
     }
 }
