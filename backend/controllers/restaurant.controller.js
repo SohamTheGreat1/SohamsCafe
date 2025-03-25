@@ -61,3 +61,19 @@ export const deleteRestaurant = async (req, res) => {
         res.status(500).json({success: false, message: "Server error"})
     }
 }
+
+export const getRestaurantById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const restaurant = await Restaurant.findById(id).populate("menu");
+        
+        if (!restaurant) {
+            return res.status(404).json({success: false, message: "Restaurant not found" });
+        }
+
+        res.status(200).json({ success: true, data: restaurant });
+    } catch (error) {
+        console.log("error in getting restaurant:", error.message);
+        res.status(500).json({ success: false, message: "Server error" });
+    }
+};
