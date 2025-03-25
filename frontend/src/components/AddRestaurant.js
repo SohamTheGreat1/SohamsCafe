@@ -122,7 +122,7 @@ const AddRestaurant = () => {
                             <option value="">Select an item</option>
                             {allItems.map(item => (
                                 <option key={item._id} value={item._id}>
-                                    {item.name} - ${item.price} (ID: {item._id})
+                                    {item.name} - ${item.price}
                                 </option>
                             ))}
                         </select>
