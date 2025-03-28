@@ -1,16 +1,57 @@
+
 .App {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #f7f7f7;
-}
+    background-color: #f7fafc;
+  }
+  
 
 .App-header {
     background-color: #2c5282;
     color: white;
-    padding: 2rem;
-    text-align: center;
-}
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+.App-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+
+nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+nav a, nav button {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    font-size: 0.9rem;
+  }
+  
+nav a {
+    background: rgba(255,255,255,0.1);
+  }
+  
+nav button {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    cursor: pointer;
+  }
+  
+nav a:hover, nav button:hover {
+    background: rgba(255,255,255,0.3);
+  }
+  
 
 .App-main {
     flex: 1;
@@ -18,21 +59,23 @@
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
-}
-
-.restaurants-section{
-    margin-bottom: 3rem;
-}
-.items-section {
-    margin-bottom: 3rem;
-}
+  }
+  
 
 @media (max-width: 768px) {
-    .App-header h1 {
-        font-size: 2rem;
+    .App-header {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      text-align: center;
     }
-
+    
+    nav {
+      width: 100%;
+      justify-content: center;
+    }
+    
     .App-main {
-        padding: 1rem;
+      padding: 1rem;
     }
-}
+  }
